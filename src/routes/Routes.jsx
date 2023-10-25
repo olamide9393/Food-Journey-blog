@@ -7,14 +7,17 @@ import Smoothies from "../category/Smoothies";
 import Vegan from "../category/Vegan";
 import Vegetables from "../category/Vegetables";
 import AdminDashboard from "../component/AdminDashboard";
+import CreateBlog from "../component/CreateBlog";
 import HomePage from "../component/HomePage";
 import Navbar from "../component/Navbar";
 import AboutUs from "../pages/AboutUs";
 import Blog from "../pages/Blog";
 import ContactUs from "../pages/ContactUs";
 import Help from "../pages/Help";
+import Login from "../pages/Login";
 import PrivacyAndPolicy from "../pages/PrivacyAndPolicy";
 import Recept from "../pages/Recept";
+import Register from "../pages/Register";
 
 const Routes = () => {
   const routing = useRoutes([
@@ -77,6 +80,18 @@ const Routes = () => {
         {
           path: "recept",
           element: <Recept />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "register",
+          element: <Register />,
+        },
+        {
+          path: "Createblog",
+          element: <CreateBlog />,
         },
       ],
     },
