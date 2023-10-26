@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { post } from '../../../backend/routes/Auth';
 
 
 const CreateBlog = () => {
          const [data, setdata] = useState([]);
+         const [file, setFile] = useState([]);
          const [Result, setResult] = useState([]);
          const navigate = useNavigate()
    
@@ -16,6 +18,23 @@ const CreateBlog = () => {
          }
          async function submitForm(e) {
                e.preventDefault();
+
+                      // image
+                      if (file) {
+                        const data= new FormData()
+                        const filename=Date.now()+file.img
+                        data.append("img",filename)
+                        data.append("file",file)
+                        newPost.photo= filename;
+                        try {
+                              const res = await axios.post("http://localhost:2000/api/v1/upload/")
+                              console.log(res);
+                        } catch (error) {
+                              console.log(error);
+                        }
+                        
+                     }
+
                try {
                   const response = await axios.post("http://localhost:2000/api/v1/blog/createBlog", data,);
                   console.log(response);
@@ -25,6 +44,7 @@ const CreateBlog = () => {
                } catch (error) {
                      console.log(error)
                }
+        
          
          }
   return (
@@ -38,7 +58,7 @@ const CreateBlog = () => {
             <div>
             <label htmlFor="name"> Blog image:</label>
             <br />
-            <input type="file" name="" id="" />
+            <input onChange={(e)=>setFile(e.target.files[0])} type="file" name="" id="" />
 
 
             </div>

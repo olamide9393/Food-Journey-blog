@@ -10,6 +10,7 @@ import AdminDashboard from "../component/AdminDashboard";
 import CreateBlog from "../component/CreateBlog";
 import HomePage from "../component/HomePage";
 import Navbar from "../component/Navbar";
+import SingleBlog from "../component/SingleBLog";
 import AboutUs from "../pages/AboutUs";
 import Blog from "../pages/Blog";
 import ContactUs from "../pages/ContactUs";
@@ -93,6 +94,10 @@ const Routes = () => {
           path: "Createblog",
           element: <CreateBlog />,
         },
+        {
+          path: '/more/:id',
+          element: <SingleBlog/>
+ },    
       ],
     },
   ]);

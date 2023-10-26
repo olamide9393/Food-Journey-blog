@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Outlet,Link,useNavigate } from 'react-router-dom'
 import Footer from './Footer'
@@ -30,6 +31,7 @@ const Navbar = () => {
           console.log("Token is missing or invalid.");
         }
       } catch (error) {
+        console.log(error);
       }
     } 
     try {
@@ -41,6 +43,7 @@ const Navbar = () => {
       });
       setData(response.data);
     } catch (error) {
+      console.log(error);
       // Handle the error appropriately for your application
       if (error.response && error.response.status === 401) {
         console.error("Request error:", error.message);
@@ -113,12 +116,7 @@ const Navbar = () => {
 
 
 
- git init
- git add .
- git commit -m "first commit"
- git branch -M main
- git remote add origin https://github.com/olamide9393/Food-Journey-blog
- git push -u origin main
+ 
 
 
 

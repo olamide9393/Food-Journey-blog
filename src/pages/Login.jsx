@@ -35,7 +35,7 @@ const Login = () => {
       setError(error?.response?.data?.error);
       alert(error.response.data.error);
     }
-    navigate("/Blog");
+    navigate("/");
   }
 
   return (
