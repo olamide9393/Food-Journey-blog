@@ -19,6 +19,7 @@ import Login from "../pages/Login";
 import PrivacyAndPolicy from "../pages/PrivacyAndPolicy";
 import Recept from "../pages/Recept";
 import Register from "../pages/Register";
+import Service from "../pages/Service";
 
 const Routes = () => {
   const routing = useRoutes([
@@ -97,7 +98,11 @@ const Routes = () => {
         {
           path: '/more/:id',
           element: <SingleBlog/>
- },    
+ }, 
+ {
+  path: "Terms of Service",
+  element: <Service />,
+}, 
       ],
     },
   ]);

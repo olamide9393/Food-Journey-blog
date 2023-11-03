@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 const SingleBlog = () => {
   const { id } = useParams();
-  const [blog, setBlog] = useState();
+  const [blog, setblog] = useState();
   const navigate = useNavigate()
 
   
@@ -12,42 +12,27 @@ const SingleBlog = () => {
   useEffect(() => {
     getSingleBlog();
   }, []);
-
   async function getSingleBlog() {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/v2/newBlog/${id}`);
-      console.log(data);
-      setBlog(data);
+      const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
+      console.log(data,"testing");
+      setblog(data.result);
     } catch (error) {
       console.log(error);
     }
   }
-
-  const handleClick = async () => {
-    try {
-      await axios.delete(`http://localhost:5000/api/v2/newBlog/${id}`);
-      navigate('/')
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  
+  
   return (
     <div>
-      {blog && (
+            {blog && (
         <div>
           <h1>{blog.title}</h1>
-          <p>{blog.desc}</p>
-          <p>Written by:   {blog.author}</p>
-          <p>Publish Year:  {blog.publishYear}</p>
         </div>
       )}
-      <button style={{gap:'20px'}} className='btn btn-info' onClick={handleClick}>
-        Delete
-      </button>
-      <Link to={`/edit/${id}`}>
-        <button className='btn btn-info'>Edit</button>
-      </Link>
+      
+      {/* <h1>{ id }</h1> */}
+ 
     </div>
   );
 };

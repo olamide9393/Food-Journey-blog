@@ -1,8 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import avocado from "../assets/avocado.jpeg";
 
 const HomePage = () => {
+  useEffect(() => {
+    history();
+  }, []);
+  async function history() {
+    
+
+    try {
+      const  data  = await axios.get(
+        "",
+        {}
+      );
+      console.log(data);
+    } catch (error) {
+
+    } finally {
+    }
+  }
+  
   return (
     <div>
       <div className="container">

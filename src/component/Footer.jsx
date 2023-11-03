@@ -1,35 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Footer.css'
+
 
 
 const Footer = () => {
   return (
-    <div>
-      <div className='container'>
+    <div className='Link'>
+      <div className='container' >
         <div className='row'>
           <div className='col-sm-3'>
-            <p>CONTACT US</p>
-             <Link>
+           <div >
+            <h5>CONTACT US</h5>
+            <Link to="/" className='Link'>
              <p>HOME</p>
              </Link>
-             <Link><p>BLOG</p></Link>
-             <Link><p>RECEPT</p></Link>
+             <Link to="/blog" className='Link'><p>BLOG</p></Link>
+             <Link to="/recept" className='Link'><p>RECEPT</p></Link>
+            
+           </div>
     
             
           </div>
           <div className='col-sm-3'>
-            <p>CONTACT</p>
-            <Link><p>OUR TEAM</p></Link>
-            <Link><p>CONTACT US</p></Link>
+            <h5>CONTACT</h5>
+            <Link className='Link'><p>OUR TEAM</p></Link>
+            <Link to="/Contact-Us" className='Link'><p>CONTACT US</p></Link>
 
             <p></p>
             
           </div>
           <div className='col-sm-3'>
-            <p>PARTNER WITH US</p>
-            <Link><p>PRIVACY POLICY</p></Link>
-            <Link><p>TERM OF SERVICE</p></Link>
-            <Link><p>GET HELP</p></Link>
+            <h5>PARTNER WITH US</h5>
+            <Link to="/Privacy & policy" className='Link'><p>PRIVACY POLICY</p></Link>
+            <Link to="/Terms of Service" className='Link'><p>TERM OF SERVICE</p></Link>
+            <Link to="/help" className='Link'><p>GET HELP</p></Link>
           </div>
         </div>
       </div>

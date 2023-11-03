@@ -137,12 +137,11 @@ const Navbar = () => {
   </div>  
   
 </nav>
-
-<br /><br /><br />
+<p style={{marginTop:'150px'}}></p>
 
       <Outlet/>
       <br /><br />
-<div style={{border: '1px solid black',}}></div>
+<div style={{border: '1px solid green',}}></div>
 <br />
       <Footer/>
 
