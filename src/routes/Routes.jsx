@@ -96,15 +96,70 @@ const Routes = () => {
           element: <CreateBlog />,
         },
         {
-          path: '/more/:id',
-          element: <SingleBlog/>
- }, 
+            
+          path: "/blog/:id",
+          element: < SingleBlog/>
+
+        },
+ 
  {
   path: "Terms of Service",
   element: <Service />,
 }, 
       ],
     },
+
+//     {
+//       path: '/Blog',
+//       element: <Navbar />,
+//       children: [
+//            {
+//             index: true,
+//             element: <Blog />,
+
+//            },
+//            {
+            
+//             path: "help",
+//             element: < Help/>
+
+//           },
+//           //  {
+            
+//           //   path: ":id",
+//           //   element: < SingleBlog/>
+
+//           // },
+
+
+//           //  {
+//           //       path: ':id',
+//           //       element: <GetOne />
+
+//           //  }
+//       ]
+//  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ]);
   return <div>{routing}</div>;
 };

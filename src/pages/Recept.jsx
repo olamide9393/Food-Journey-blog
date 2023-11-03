@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Recept = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -45,6 +46,8 @@ const Recept = () => {
                   <img src="..." className="card-img-top" alt="..." />
                   <div className="card-body">
                     <p className="card-text">{elem.title}</p>
+                    <Link style={{ color: '#f1356d' }} to={"/blog/" + elem._id } >read more</Link>
+
                   </div>
                 </div>
               </div>

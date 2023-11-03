@@ -64,7 +64,7 @@ const Blog = () => {
                   <img src="..." className="card-img-top" alt="..." />
                   <div className="card-body">
                     <p className="card-text">{elem.title}</p>
-                    <Link style={{ color: '#f1356d' }} to={"more/" + elem._id } >read more</Link>
+                    <Link style={{ color: '#f1356d' }} to={"/blog/" + elem._id } >read more</Link>
                   </div>
                 </div>
               </div>

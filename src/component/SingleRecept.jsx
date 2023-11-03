@@ -3,9 +3,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 
-const SingleBlog = () => {
+const SingleRecept = () => {
   const { id } = useParams();
-  const [blog, setblog] = useState();
+  const [recept, setrecept] = useState();
   const navigate = useNavigate()
   const [loading, setloading] = useState(false);
 
@@ -13,13 +13,13 @@ const SingleBlog = () => {
   
 
   useEffect(() => {
-    getSingleBlog();
+         SingleRecept();
   }, []);
-  async function getSingleBlog() {
+  async function SingleRecept() {
     try {
       const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
       console.log(data,"testing");
-      setblog(data);
+      setrecept(data);
     } catch (error) {
       console.log(error);
     }
@@ -47,10 +47,10 @@ const SingleBlog = () => {
       ) : (
    <div>
     
-    {blog && (
+    {recept && (
         <div>
           
-          <h1>{blog.title}</h1>
+          <h1>{recept.title}</h1>
         
         </div>
       )}
@@ -66,4 +66,4 @@ const SingleBlog = () => {
   );
 };
 
-export default SingleBlog;
+export default SingleRecept;
