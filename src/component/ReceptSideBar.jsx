@@ -11,8 +11,8 @@ const ReceptSideBar = () => {
     <Link className="nav-link dropdown-toggle" data-toggle="dropdown" >Recepts Category</Link>
     <div className="dropdown-menu">
       <Link className="dropdown-item" to='/recept'>All</Link>
-      <Link className="dropdown-item" to='/recept/sald'>Salad</Link>
-      <Link className="dropdown-item" to='recept/desserts'>Desserts</Link>
+      <Link className="dropdown-item" to='/recept/salad'>Salad</Link>
+      <Link className="dropdown-item" to='/recept/desserts'>Desserts</Link>
       <Link className="dropdown-item" to='/recept/drinks'>Drinks</Link>
       <Link className="dropdown-item" to='/recept/snacks'>Snacks</Link>
       <Link className="dropdown-item" to='/recept/smoothies'>Smoothies</Link>

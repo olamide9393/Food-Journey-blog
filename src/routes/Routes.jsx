@@ -1,11 +1,11 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Fruits from "../category/Fruits";
-import Meat from "../category/Meat";
-import MilkProduct from "../category/MilkProduct";
-import Smoothies from "../category/Smoothies";
-import Vegan from "../category/Vegan";
-import Vegetables from "../category/Vegetables";
+import Fruits from "../blogcategories/Fruits";
+import Meat from "../blogcategories/Meat";
+import MilkProduct from "../blogcategories/MilkProduct";
+import Smoothies from "../blogcategories/Smoothies";
+import Vegan from "../blogcategories/Vegan";
+import Vegetables from "../blogcategories/Vegetables";
 import AdminDashboard from "../component/AdminDashboard";
 import CreateBlog from "../component/CreateBlog";
 import HomePage from "../component/HomePage";
@@ -30,6 +30,12 @@ import ReceptPage4 from "../pages/ReceptPage4";
 import ReceptPage5 from "../pages/ReceptPage5";
 import Register from "../pages/Register";
 import Service from "../pages/Service";
+import Desserts from "../receptcategory/Desserts";
+import Drinks from "../receptcategory/Drinks";
+import GlutenFree from "../receptcategory/GlutenFree";
+import Salad from "../receptcategory/Salad";
+import Snacks from "../receptcategory/Snacks";
+
 
 const Routes = () => {
   const routing = useRoutes([
@@ -40,30 +46,6 @@ const Routes = () => {
         {
           index: true,
           element: <HomePage />,
-        },
-        {
-          path: "fruits",
-          element: <Fruits />,
-        },
-        {
-          path: "meat",
-          element: <Meat />,
-        },
-        {
-          path: "milk-product",
-          element: <MilkProduct />,
-        },
-        {
-          path: "smoothies",
-          element: <Smoothies />,
-        },
-        {
-          path: "vegan",
-          element: <Vegan />,
-        },
-        {
-          path: "vegetables",
-          element: <Vegetables />,
         },
         {
           path: "Admin-dashboard",
@@ -106,94 +88,128 @@ const Routes = () => {
           element: <CreateBlog />,
         },
         {
-            
           path: "/blog/:id",
-          element: < SingleBlog/>
+          element: <SingleBlog />,
         },
         {
-            
           path: "/recept/:id",
-          element: < SingleRecept/>
+          element: <SingleRecept />,
         },
- 
- {
-  path: "Terms of Service",
-  element: <Service />,
-}, 
- {
-  path: "recept/2",
-  element: <ReceptPage2 />,
-}, 
- {
-  path: "recept/3",
-  element: <ReceptPage3 />,
-}, 
- {
-  path: "recept/4",
-  element: <ReceptPage4 />,
-}, 
- {
-  path: "recept/5",
-  element: <ReceptPage5 />,
-}, 
-{
-  path: "Blog/2",
-  element: <BlogPage2 />,
-},
-{
-  path: "Blog/3",
-  element: <BlogPage3 />,
-},
-{
-  path: "Blog/4",
-  element: <BlogPage4 />,
-},
-{
-  path: "Blog/5",
-  element: <BlogPage5 />,
-},
+
+        {
+          path: "Terms of Service",
+          element: <Service />,
+        },
+        {
+          path: "recept/2",
+          element: <ReceptPage2 />,
+        },
+        {
+          path: "recept/3",
+          element: <ReceptPage3 />,
+        },
+        {
+          path: "recept/4",
+          element: <ReceptPage4 />,
+        },
+        {
+          path: "recept/5",
+          element: <ReceptPage5 />,
+        },
+        {
+          path: "Blog/2",
+          element: <BlogPage2 />,
+        },
+        {
+          path: "Blog/3",
+          element: <BlogPage3 />,
+        },
+        {
+          path: "Blog/4",
+          element: <BlogPage4 />,
+        },
+        {
+          path: "Blog/5",
+          element: <BlogPage5 />,
+        },
+
+        {
+          path: "/Blog/fruits",
+          element: <Fruits />,
+        },
+        {
+          path: "/Blog/meat",
+          element: <Meat />,
+        },
+        // {
+        //   path: "/Blog/legume",
+        //   element: <Legu />,
+        // },
+        {
+          path: "/Blog/milk-product",
+          element: <MilkProduct />,
+        },
+        {
+          path: "/Blog/smoothies",
+          element: <Smoothies />,
+        },
+        {
+          path: "/Blog/vegan",
+          element: <Vegan />,
+        },
+        {
+          path: "/Blog/vegetables",
+          element: <Vegetables />,
+        },
+        {
+          path: "recept/desserts",
+          element: <Desserts />,
+        },
+        {
+          path: "drinks",
+          element: <Drinks />,
+        },
+        {
+          path: "gluten-free",
+          element: <GlutenFree />,
+        },
+        {
+          path: "salad",
+          element: <Salad />,
+        },
+        {
+          path: "smoothies",
+          element: <Smoothies />,
+        },
+        {
+          path: "snacks",
+          element: <Snacks />,
+        },
+        {
+          path: "vegan",
+          element: <Vegan />,
+        },
       ],
     },
 
-//     {
-//       path: '/',
-//       element: <Navbar />,
-//       children: [
-//            {
-//             index: true,
-//             element: <Sidebar />,
+    //     {
+    //       path: '/',
+    //       element: <Navbar />,
+    //       children: [
+    //            {
+    //             index: true,
+    //             element: <Sidebar />,
 
-//            },
-//            {
-            
-//             path: "help",
-//             element: < Help/>
+    //            },
+    //            {
 
-//           },
-        
-//       ]
-//  },
+    //             path: "help",
+    //             element: < Help/>
 
+    //           },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //       ]
+    //  },
   ]);
   return <div>{routing}</div>;
 };
