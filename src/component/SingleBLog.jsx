@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import Sidebar from './BlogSideBar';
 
 
 
@@ -32,6 +33,7 @@ const SingleBlog = () => {
   
   return (
     <div>
+      <Sidebar/>
       {loading ? (
         <h1>
           <div

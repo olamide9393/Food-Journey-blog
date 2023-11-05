@@ -10,7 +10,7 @@ import AdminDashboard from "../component/AdminDashboard";
 import CreateBlog from "../component/CreateBlog";
 import HomePage from "../component/HomePage";
 import Navbar from "../component/Navbar";
-import Sidebar from "../component/SideBar";
+import Sidebar from "../component/BlogSideBar";
 import SingleBlog from "../component/SingleBLog";
 import SingleRecept from "../component/SingleRecept";
 import AboutUs from "../pages/AboutUs";
@@ -155,24 +155,24 @@ const Routes = () => {
       ],
     },
 
-    {
-      path: '/',
-      element: <Navbar />,
-      children: [
-           {
-            index: true,
-            element: <Sidebar />,
+//     {
+//       path: '/',
+//       element: <Navbar />,
+//       children: [
+//            {
+//             index: true,
+//             element: <Sidebar />,
 
-           },
-           {
+//            },
+//            {
             
-            path: "help",
-            element: < Help/>
+//             path: "help",
+//             element: < Help/>
 
-          },
+//           },
         
-      ]
- },
+//       ]
+//  },
 
 
 

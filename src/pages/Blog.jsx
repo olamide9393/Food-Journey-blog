@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "../component/BlogSideBar";
 
 
 const Blog = () => {
@@ -28,6 +29,7 @@ const Blog = () => {
   }
   return (
     <div>
+      <Sidebar/>
       {loading ? (
         <h1>
           <div

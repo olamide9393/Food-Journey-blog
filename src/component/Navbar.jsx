@@ -87,7 +87,10 @@ const Navbar = () => {
       </li> 
       <li className="nav-item">
         <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/about-us" >ABOUT US</Link>
-      </li> 
+      </li>
+
+
+      
       {/* <li className="nav-item">
         <Link style={{color:'black',marginLeft:'100px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/Createblog" >CREATE BLOG</Link>
       </li> 
@@ -133,14 +136,23 @@ const Navbar = () => {
     <button className="btn btn-success" type="submit">Search</button>
   </form>
 </nav>   
+
+
+
+
+
+
+
+
+
+
     </ul>
   </div>  
   
 </nav>
 <p style={{marginTop:'150px'}}></p>
-
       <Outlet/>
-      <br /><br />
+      <br />
 <div style={{border: '1px solid green',}}></div>
 <br />
       <Footer/>

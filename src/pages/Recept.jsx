@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ReceptSideBar from "../component/ReceptSideBar";
 
 const Recept = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -27,6 +28,7 @@ const Recept = () => {
   }
   return (
     <div>
+      <ReceptSideBar/>
       {loading ? (
         <h1>
           <div
