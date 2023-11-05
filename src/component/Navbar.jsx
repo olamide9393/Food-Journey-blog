@@ -68,7 +68,7 @@ const Navbar = () => {
     <div>
      <nav className="navbar navbar-expand-md navbar-dark">
   <Link to="/" style={{color:'black',fontSize:'23px'}} className="navbar-brand">FOOD JOURNEY BLOG</Link>
-  <span>Welcome {data?.name}</span>
+  <span>Welcome { data?.name}</span>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style={{backgroundColor:'green'}}>
     <span className="navbar-toggler-icon"></span>
   </button>

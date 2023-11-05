@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 
+
 const SingleBlog = () => {
   const { id } = useParams();
   const [blog, setblog] = useState();
@@ -18,7 +19,7 @@ const SingleBlog = () => {
   async function getSingleBlog() {
     try {
       const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
-      console.log(data,"testing");
+      
       setblog(data);
     } catch (error) {
       console.log(error);
@@ -31,13 +32,7 @@ const SingleBlog = () => {
   
   return (
     <div>
-      ell
-    
-
-
-
-
-{loading ? (
+      {loading ? (
         <h1>
           <div
             className="spinner-border text-success"
@@ -45,16 +40,41 @@ const SingleBlog = () => {
           ></div>
         </h1>
       ) : (
-   <div>
-    
-    {blog && (
         <div>
-          
-          <h1>{blog.title}</h1>
-        
+          {blog && (
+            <div>
+              <h1 style={{ textAlign: "center" }}>{blog.title}</h1>
+              <br /><br />
+
+              <div className="container">
+                
+                    <img src={blog.photo}  />
+                  </div>
+              <br /><br /><br />
+
+              <div className="container"  >
+                <div className="row">
+                  <div className="col-sm-6">
+                    <div>{blog.description}</div>
+                  </div>
+                  <br /><br />
+                  <div className="col-sm-6">
+
+                  <div className="form-floating">
+                    <label htmlFor="floatingTextarea2" style={{fontSize:"30px"}}>Comments:</label>
+                    <textarea
+                      className="form-control"
+                      placeholder="Your messages"
+                      id="floatingTextarea2"
+                      style={{ height: "100px" }}
+                    ></textarea>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-   </div>
       )}
 
 

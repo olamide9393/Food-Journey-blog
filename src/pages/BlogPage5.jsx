@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const Blog = () => {
+const BlogPage5 = () => {
   const [blogDatas, setblogDatas] = useState([]);
 
   const [loading, setloading] = useState(false);
@@ -42,7 +42,6 @@ const Blog = () => {
           
               <br />
               <div  className="col-sm-4">
-
               <div className="card" style={{ width: "25rem" }}>
                 <img src={elem.photo}  className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -53,8 +52,6 @@ const Blog = () => {
                   </Link>
                 </div>
               </div>
-
-
               </div>
             </div>
           </div>
@@ -75,4 +72,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage5;

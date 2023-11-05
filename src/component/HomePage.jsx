@@ -212,6 +212,17 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+<div style={{display:"flex"}}>
+  <p>helo</p>
+  <p>helo</p>
+  <p>helo</p>
+  <p>helo</p>
+  <p>helo</p>
+  <p>helo</p>
+  <p>helo</p>
+</div>
+
     </div>
   );
 };

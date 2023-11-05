@@ -10,14 +10,24 @@ import AdminDashboard from "../component/AdminDashboard";
 import CreateBlog from "../component/CreateBlog";
 import HomePage from "../component/HomePage";
 import Navbar from "../component/Navbar";
+import Sidebar from "../component/SideBar";
 import SingleBlog from "../component/SingleBLog";
+import SingleRecept from "../component/SingleRecept";
 import AboutUs from "../pages/AboutUs";
 import Blog from "../pages/Blog";
+import BlogPage2 from "../pages/BlogPage2";
+import BlogPage3 from "../pages/BlogPage3";
+import BlogPage4 from "../pages/BlogPage4";
+import BlogPage5 from "../pages/BlogPage5";
 import ContactUs from "../pages/ContactUs";
 import Help from "../pages/Help";
 import Login from "../pages/Login";
 import PrivacyAndPolicy from "../pages/PrivacyAndPolicy";
 import Recept from "../pages/Recept";
+import ReceptPage2 from "../pages/ReceptPage2";
+import ReceptPage3 from "../pages/ReceptPage3";
+import ReceptPage4 from "../pages/ReceptPage4";
+import ReceptPage5 from "../pages/ReceptPage5";
 import Register from "../pages/Register";
 import Service from "../pages/Service";
 
@@ -99,46 +109,70 @@ const Routes = () => {
             
           path: "/blog/:id",
           element: < SingleBlog/>
-
+        },
+        {
+            
+          path: "/recept/:id",
+          element: < SingleRecept/>
         },
  
  {
   path: "Terms of Service",
   element: <Service />,
 }, 
+ {
+  path: "recept/2",
+  element: <ReceptPage2 />,
+}, 
+ {
+  path: "recept/3",
+  element: <ReceptPage3 />,
+}, 
+ {
+  path: "recept/4",
+  element: <ReceptPage4 />,
+}, 
+ {
+  path: "recept/5",
+  element: <ReceptPage5 />,
+}, 
+{
+  path: "Blog/2",
+  element: <BlogPage2 />,
+},
+{
+  path: "Blog/3",
+  element: <BlogPage3 />,
+},
+{
+  path: "Blog/4",
+  element: <BlogPage4 />,
+},
+{
+  path: "Blog/5",
+  element: <BlogPage5 />,
+},
       ],
     },
 
-//     {
-//       path: '/Blog',
-//       element: <Navbar />,
-//       children: [
-//            {
-//             index: true,
-//             element: <Blog />,
+    {
+      path: '/',
+      element: <Navbar />,
+      children: [
+           {
+            index: true,
+            element: <Sidebar />,
 
-//            },
-//            {
+           },
+           {
             
-//             path: "help",
-//             element: < Help/>
+            path: "help",
+            element: < Help/>
 
-//           },
-//           //  {
-            
-//           //   path: ":id",
-//           //   element: < SingleBlog/>
-
-//           // },
-
-
-//           //  {
-//           //       path: ':id',
-//           //       element: <GetOne />
-
-//           //  }
-//       ]
-//  },
+          },
+        
+      ]
+ },
 
 
 
