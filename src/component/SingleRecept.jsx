@@ -45,12 +45,14 @@ const SingleRecept = () => {
 
               <div className="container">
                 <div className="row">
-                  <div className="col-sm-6">
-                    <div>{recept.photo}</div>
+                  <div className="col-sm-6" >
+                    < img src={recept.photo} />
                   </div>
                   <div className="col-sm-6">
                     <h3>ingredients:</h3>
-                    <p>{recept.ingredients}</p>
+                    <ul>
+                      <li>{recept.ingredients}</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -62,6 +64,8 @@ const SingleRecept = () => {
                     <div >{recept.description}</div>
                   </div>
                   <div className="col-sm-6">
+                    <div>{recept.preparation}</div>
+                   
 
                   <div className="form-floating">
                     <textarea

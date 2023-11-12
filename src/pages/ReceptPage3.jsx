@@ -18,7 +18,8 @@ const ReceptPage3 = () => {
         "http://localhost:2000/api/v1/Recept/getRecept/",
         {}
       );
-      const firstFourItems = data.result.slice(10, 20);
+      console.log(data, "hi");
+      const firstFourItems = data.result.slice(20, 30);
       setblogDatas(firstFourItems);
     } catch (error) {
     } finally {

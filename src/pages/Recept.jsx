@@ -19,6 +19,7 @@ const Recept = () => {
         "http://localhost:2000/api/v1/Recept/getRecept/",
         {}
       );
+      console.log(data);
       const firstFourItems = data.result.slice(0, 10);
       setblogDatas(firstFourItems);
     } catch (error) {

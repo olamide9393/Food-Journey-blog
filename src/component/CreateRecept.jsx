@@ -94,6 +94,11 @@ const CreateRecept = () => {
                   <textarea className="form-control" name='description' onChange={handleChange} style={{ height: '40vh' }} ></textarea>
 
             </div>
+            <div>
+                  <label htmlFor="email">recept instructions:</label>
+                  <textarea className="form-control" name='instructions' onChange={handleChange} style={{ height: '40vh' }} ></textarea>
+
+            </div>
             <br /> 
             <button style={{width:'100%'}} className='btn btn-success' onClick={submitForm}>PUBLISH</button>
       </form>
