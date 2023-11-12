@@ -20,7 +20,8 @@ const BlogPage3 = () => {
         {}
       );
       // console.log(data);
-      setblogDatas(data.result);
+      const firstFourItems = data.result.slice(20, 30);
+      setblogDatas(firstFourItems);
     } catch (error) {
     } finally {
       setloading(false);

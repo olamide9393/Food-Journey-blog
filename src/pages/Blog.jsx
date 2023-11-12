@@ -21,7 +21,8 @@ const Blog = () => {
         {}
       );
       // console.log(data);
-      setblogDatas(data.result);
+      const firstFourItems = data.result.slice(0, 10);
+      setblogDatas(firstFourItems);
     } catch (error) {
     } finally {
       setloading(false);

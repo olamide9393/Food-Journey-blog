@@ -61,6 +61,9 @@ const SingleBlog = () => {
                   </div>
                   <br /><br />
                   <div className="col-sm-6">
+                    <div>
+                      {blog.benefits}
+                    </div>
 
                   <div className="form-floating">
                     <label htmlFor="floatingTextarea2" style={{fontSize:"30px"}}>Comments:</label>
