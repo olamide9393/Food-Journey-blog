@@ -32,13 +32,19 @@ const Login = () => {
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data || null));
       }
-      alert(response.data.message);
+      // alert(response.data.message);
+      toast.success(response.data.message, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    navigate("/");
+
     } catch (error) {
          console.log(error);
       setError(error?.response?.data?.error);
       alert(error.response.data.error);
+   
     }
-    navigate("/");
+    
   }
   
   const showToastMessage = () => {
@@ -111,15 +117,30 @@ const Login = () => {
                       Register here
                     </Link>
                   </div>
+                  <div>
 
                   <button
+
                     type="submit"
                     className="btn btn-success btn-block mb-4"
                   >
+      {/* <ToastContainer /> */}
+
                     LOGIN
                   </button>
+      {/* <ToastContainer /> */}
+
+                  </div>
+
+                  {/* <div>
+      <button type="submit" onClick={handleClick}>login</button>
+      <ToastContainer />
+    </div> */}
                   {Error && <div style={{ color: "red" }}>{Error}</div>}
                 </form>
+                <ToastContainer />
+
+    
               </div>
             </div>
           </div>
