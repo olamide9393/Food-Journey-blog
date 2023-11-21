@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Outlet,Link,useNavigate } from 'react-router-dom'
-import Footer from './Footer'
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
+import Footer from "./Footer";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,9 +34,9 @@ const Navbar = () => {
       } catch (error) {
         console.log(error);
       }
-    } 
+    }
     try {
-      const response = await axios.get("http://localhost:2000/api/v1/auth/getUser", {
+      const response = await axiosInstance.get("auth/getUser", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -54,112 +55,191 @@ const Navbar = () => {
   }
   useEffect(() => {
     // Check if a token is available in local storage
-    const token = localStorage.getItem('user');
+    const token = localStorage.getItem("user");
     setIsLoggedIn(!!token); // Set isLoggedIn to true if token is available
   }, []);
 
   const handleLogout = () => {
     // Clear the token from local storage on logout
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
     navigate("/login");
   };
   return (
     <div>
-     <nav className="navbar navbar-expand-md navbar-dark">
-  <Link to="/" style={{color:'black',fontSize:'23px'}} className="navbar-brand">FOOD JOURNEY BLOG</Link>
-  <span>Welcome { data?.name}</span>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style={{backgroundColor:'green'}}>
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="collapsibleNavbar" >
-    <ul className="navbar-nav" >
-      <li className="nav-item" >
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/" >HOME</Link>
-      </li>
-      <li className="nav-item">
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/Blog" >BLOG</Link>
+      <nav className="navbar navbar-expand-md navbar-dark">
+        <Link
+          to="/"
+          style={{ color: "black", fontSize: "23px" }}
+          className="navbar-brand"
+        >
+          FOOD JOURNEY BLOG
+        </Link>
 
-      </li>
-      <li className="nav-item">
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/recept" >RECEPT</Link>
+        {isLoggedIn ? (
+          <>
+            <span>Welcome {data?.name}</span>
+          </>
+        ) : (
+          <div></div>
+        )}
 
-      </li> 
-      <li className="nav-item">
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/about-us" >ABOUT US</Link>
-      </li>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+          style={{ backgroundColor: "green" }}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link
+                style={{
+                  color: "black",
+                  marginLeft: "120px",
+                  marginTop: "10px",
+                  fontSize: "20px",
+                }}
+                className="nav-link"
+                to="/"
+              >
+                HOME
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                style={{
+                  color: "black",
+                  marginLeft: "120px",
+                  marginTop: "10px",
+                  fontSize: "20px",
+                }}
+                className="nav-link"
+                to="/Blog"
+              >
+                BLOG
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                style={{
+                  color: "black",
+                  marginLeft: "120px",
+                  marginTop: "10px",
+                  fontSize: "20px",
+                }}
+                className="nav-link"
+                to="/recept"
+              >
+                RECEPT
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                style={{
+                  color: "black",
+                  marginLeft: "120px",
+                  marginTop: "10px",
+                  fontSize: "20px",
+                }}
+                className="nav-link"
+                to="/about-us"
+              >
+                ABOUT US
+              </Link>
+            </li>
 
-
-      
-      {/* <li className="nav-item">
+            {/* <li className="nav-item">
         <Link style={{color:'black',marginLeft:'100px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/Createblog" >CREATE BLOG</Link>
       </li> 
       <li className="nav-item">
         <Link style={{color:'black',marginLeft:'100px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/Admin-dashboard" >ADMIN DASHBOARD</Link>
       </li>  */}
 
-      {isLoggedIn ? (
-          // Display "Logout" if the user is logged in
-        <>
-            <li className="nav-item">
-            <button className="nav-link" onClick={handleLogout} style={{marginLeft:'150px',marginTop:'30px',color:'black'}}>Logout</button>
-          </li>
-        </>
-        ) : (
-          // Display "Login" and "Register" if the user is not logged in
-          <>
-              <li className="nav-item">
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/register" >REGITSTER</Link>
-      </li> 
-      <li className="nav-item">
-        <Link style={{color:'black',marginLeft:'120px',marginTop:'10px',fontSize:'20px'}}  className="nav-link" to="/login" >LOGIN</Link>
-      </li> 
-          </>
-        )}
+            {isLoggedIn ? (
+              // Display "Logout" if the user is logged in
+              <>
+                <li className="nav-item">
+                  <button
+                    className="nav-link"
+                    onClick={handleLogout}
+                    style={{
+                      marginLeft: "150px",
+                      marginTop: "30px",
+                      color: "black",
+                    }}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              // Display "Login" and "Register" if the user is not logged in
+              <>
+                <li className="nav-item">
+                  <Link
+                    style={{
+                      color: "black",
+                      marginLeft: "120px",
+                      marginTop: "10px",
+                      fontSize: "20px",
+                    }}
+                    className="nav-link"
+                    to="/register"
+                  >
+                    REGITSTER
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    style={{
+                      color: "black",
+                      marginLeft: "120px",
+                      marginTop: "10px",
+                      fontSize: "20px",
+                    }}
+                    className="nav-link"
+                    to="/login"
+                  >
+                    LOGIN
+                  </Link>
+                </li>
+              </>
+            )}
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
-      <nav className="navbar navbar-expand-sm navbar-dark">
-  <form style={{marginLeft:'100px',marginTop:'10px',fontSize:'25px'}} className="form-inline">
-    <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-    <button className="btn btn-success" type="submit">Search</button>
-  </form>
-</nav>   
-
-
-
-
-
-
-
-
-
-
-    </ul>
-  </div>  
-  
-</nav>
-<p style={{marginTop:'150px'}}></p>
-      <Outlet/>
+            <nav className="navbar navbar-expand-sm navbar-dark">
+              <form
+                style={{
+                  marginLeft: "100px",
+                  marginTop: "10px",
+                  fontSize: "25px",
+                }}
+                className="form-inline"
+              >
+                <input
+                  className="form-control mr-sm-2"
+                  type="text"
+                  placeholder="Search"
+                />
+                <button className="btn btn-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </nav>
+          </ul>
+        </div>
+      </nav>
+      <p style={{ marginTop: "150px" }}></p>
+      <Outlet />
       <br />
-<div style={{border: '1px solid green',}}></div>
-<br />
-      <Footer/>
-
-
+      <div style={{ border: "1px solid green" }}></div>
+      <br />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

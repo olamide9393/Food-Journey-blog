@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 
 const Desserts = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -14,20 +15,20 @@ const Desserts = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
+      const { data } = await axiosInstance.get(
+        "Recept/getRecept/",
         {}
       );
       console.log(data);
 
-      const chemists = data.result.filter(person =>
-        person.category === 'Coffee'
+      const dessertsCategory = data.result.filter(blog =>
+        blog.category === 'dessert'
       );
       console.log(chemists,'cayeen');
 
 
 
-      setblogDatas(chemists);
+      setblogDatas(dessertsCategory);
     } catch (error) {
     } finally {
       setloading(false);

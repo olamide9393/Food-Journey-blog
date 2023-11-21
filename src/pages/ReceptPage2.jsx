@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 
 const ReceptPage2 = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -14,8 +15,8 @@ const ReceptPage2 = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
+      const { data } = await axiosInstance.get(
+        "Recept/getRecept/",
         {}
       );
       const firstFourItems = data.result.slice(10, 20);

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../../RequestUrl';
 // import { post } from '../../../backend/routes/Auth';
 
 
@@ -36,7 +37,7 @@ const CreateBlog = () => {
                      }
 
                try {
-                  const response = await axios.post("http://localhost:2000/api/v1/blog/createBlog", data,);
+                  const response = await axiosInstance.post("blog/createBlog", data,);
                   console.log(response);
                      alert('you have successfully add your blog')
                setResult(response.data)

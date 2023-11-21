@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 
 const Drinks = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -14,20 +15,15 @@ const Drinks = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/");
       console.log(data);
 
-      const chemists = data.result.filter(person =>
-        person.category === 'Coffee'
+      const drinkCategory = data.result.filter(
+        (recept) => recept.category === "drink"
       );
-      console.log(chemists,'cayeen');
+      console.log(chemists, "cayeen");
 
-
-
-      setblogDatas(chemists);
+      setblogDatas(drinkCategory);
     } catch (error) {
     } finally {
       setloading(false);
@@ -39,7 +35,7 @@ const Drinks = () => {
         <h1>
           <div
             className="spinner-border text-success"
-            style={{ width: "100px", height: "100px", }}
+            style={{ width: "100px", height: "100px" }}
           ></div>
         </h1>
       ) : (
@@ -54,30 +50,38 @@ const Drinks = () => {
                   <img src="..." className="card-img-top" alt="..." />
                   <div className="card-body">
                     <p className="card-text">{elem.title}</p>
-                    <Link style={{ color: '#f1356d' }} to={"/recept/" + elem._id } >read more</Link>
-
+                    <Link
+                      style={{ color: "#f1356d" }}
+                      to={"/recept/" + elem._id}
+                    >
+                      read more
+                    </Link>
                   </div>
                 </div>
               </div>
               <br />
-              
             </div>
           </div>
-          
         ))
-        
       )}
-      <br /><br />
-      <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/recept">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/recept/2" >2</Link> </li>
-    
-  </ul>
-</div>
-  
-
-
+      <br />
+      <br />
+      <div className="container">
+        <ul className="pagination" style={{ gap: "20px" }}>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept">
+              1
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept/2">
+              2
+            </Link>{" "}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

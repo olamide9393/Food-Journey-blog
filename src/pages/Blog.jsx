@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 import Sidebar from "../component/BlogSideBar";
-
 
 const Blog = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -16,10 +16,7 @@ const Blog = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/blog/getblog",
-        {}
-      );
+      const { data } = await axiosInstance.get("blog/getblog", {});
       // console.log(data);
       const firstFourItems = data.result.slice(0, 10);
       setblogDatas(firstFourItems);
@@ -30,7 +27,7 @@ const Blog = () => {
   }
   return (
     <div>
-      <Sidebar/>
+      <Sidebar />
       {loading ? (
         <h1>
           <div
@@ -42,41 +39,61 @@ const Blog = () => {
         blogDatas?.map((elem) => (
           <div className="container" style={{ marginTop: "50px" }}>
             <div className="row">
-          
               <br />
-              <div  className="col-sm-4">
+              <div className="col-sm-4">
+                <div className="card" style={{ width: "25rem" }}>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{elem.title}</h5>
 
-              <div className="card" style={{ width: "25rem" }}>
-                <img src={elem.photo}  className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{elem.title}</h5>
-                  
-                  <Link className="btn btn-success" to={"/blog/" + elem._id }>
-                    READ MORE
-                  </Link>
+                    <Link className="btn btn-success" to={"/blog/" + elem._id}>
+                      READ MORE
+                    </Link>
+                  </div>
                 </div>
-              </div>
-
-              
-
-
               </div>
             </div>
           </div>
-          
         ))
       )}
 
-<br /><br />
-                  <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/Blog">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/Blog/2" >2</Link> </li>
-    <li className="page-item"> <Link className="page-link"  to="/Blog/3">3</Link> </li>
-    <li className="page-item"> <Link className="page-link" to="/Blog/4">4</Link> </li>
-  <li className="page-item"> <Link className="page-link" to="/Blog/5" > 5 </Link> </li>
-  </ul>
-</div>
+      <br />
+      <br />
+      <div className="container">
+        <ul className="pagination" style={{ gap: "20px" }}>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/Blog">
+              1
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/Blog/2">
+              2
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/Blog/3">
+              3
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/Blog/4">
+              4
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/Blog/5">
+              {" "}
+              5{" "}
+            </Link>{" "}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

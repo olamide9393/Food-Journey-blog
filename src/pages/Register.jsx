@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 // import axiosInstance from "../../RequestUrl";
 // import signup from "../assets/login.png";
 
@@ -21,7 +22,7 @@ const Register = () => {
   async function handleClick(e) {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:2000/api/v1/auth/signUp", Data, {
+      const response = await axiosInstance.post("auth/signUp", Data, {
         headers: { "Content-type": "application/json" },
       });
       console.log(response);

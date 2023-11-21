@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 
 const GlutenFree = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -14,20 +15,20 @@ const GlutenFree = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
+      const { data } = await axiosInstance.get(
+        "Recept/getRecept/",
         {}
       );
       console.log(data);
 
-      const chemists = data.result.filter(person =>
-        person.category === 'Coffee'
+      const glutenFreeCategory = data.result.filter(recept =>
+        recept.category === 'gluten-free'
       );
       console.log(chemists,'cayeen');
 
 
 
-      setblogDatas(chemists);
+      setblogDatas(glutenFreeCategory);
     } catch (error) {
     } finally {
       setloading(false);

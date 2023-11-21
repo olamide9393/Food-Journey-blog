@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 import ReceptSideBar from "../component/ReceptSideBar";
 
 const Recept = () => {
@@ -15,10 +16,7 @@ const Recept = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
       console.log(data);
       const firstFourItems = data.result.slice(0, 10);
       setblogDatas(firstFourItems);
@@ -29,12 +27,12 @@ const Recept = () => {
   }
   return (
     <div>
-      <ReceptSideBar/>
+      <ReceptSideBar />
       {loading ? (
         <h1>
           <div
             className="spinner-border text-success"
-            style={{ width: "100px", height: "100px", }}
+            style={{ width: "100px", height: "100px" }}
           ></div>
         </h1>
       ) : (
@@ -45,43 +43,62 @@ const Recept = () => {
               <br />
 
               <div className="col-sm-3">
-   
-
                 <div className="card" style={{ width: "25rem" }}>
-                <img src={elem.photo}  className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{elem.title}</h5>
-                  
-                  <Link className="btn btn-success" to={"/recept/" + elem._id }>
-                    READ MORE
-                  </Link>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{elem.title}</h5>
+
+                    <Link
+                      className="btn btn-success"
+                      to={"/recept/" + elem._id}
+                    >
+                      READ MORE
+                    </Link>
+                  </div>
                 </div>
               </div>
-
-
-
-
-
-
-              </div>
               <br />
-              
             </div>
           </div>
         ))
       )}
-      <br /><br />
-                  <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/recept">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/recept/2" >2</Link> </li>
-    <li className="page-item"> <Link className="page-link"  to="/recept/3">3</Link> </li>
-    <li className="page-item"> <Link className="page-link" to="/recept/4">4</Link> </li>
-  <li className="page-item"> <Link className="page-link" to="/recept/5" > 5 </Link> </li>
-  </ul>
-</div>
-
-
+      <br />
+      <br />
+      <div className="container">
+        <ul className="pagination" style={{ gap: "20px" }}>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept">
+              1
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept/2">
+              2
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept/3">
+              3
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept/4">
+              4
+            </Link>{" "}
+          </li>
+          <li className="page-item">
+            {" "}
+            <Link className="page-link" to="/recept/5">
+              {" "}
+              5{" "}
+            </Link>{" "}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

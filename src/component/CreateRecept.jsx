@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../../RequestUrl';
 // import { post } from '../../../backend/routes/Auth';
 
 
@@ -36,7 +37,7 @@ const CreateRecept = () => {
                      }
 
                try {
-                  const response = await axios.post("http://localhost:2000/api/v1/Recept/createRecept", data,);
+                  const response = await axiosInstance.post("Recept/createRecept", data,);
                   console.log(response);
                      alert('you have successfully add your recept')
                setResult(response.data)

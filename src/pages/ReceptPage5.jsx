@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../RequestUrl";
 
 const ReceptPage5 = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -14,10 +15,7 @@ const ReceptPage5 = () => {
     setloading(true);
 
     try {
-      const { data } = await axios.get(
-        "http://localhost:2000/api/v1/Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
       const firstFourItems = data.result.slice(40, 50);
       setblogDatas(firstFourItems);
     } catch (error) {
@@ -41,16 +39,19 @@ const ReceptPage5 = () => {
               <br />
 
               <div className="col-sm-3">
-              <div className="card" style={{ width: "25rem" }}>
-                <img src={elem.photo}  className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{elem.title}</h5>
-                  
-                  <Link className="btn btn-success" to={"/recept/" + elem._id }>
-                    READ MORE
-                  </Link>
+                <div className="card" style={{ width: "25rem" }}>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{elem.title}</h5>
+
+                    <Link
+                      className="btn btn-success"
+                      to={"/recept/" + elem._id}
+                    >
+                      READ MORE
+                    </Link>
+                  </div>
                 </div>
-              </div>
               </div>
               <br />
             </div>

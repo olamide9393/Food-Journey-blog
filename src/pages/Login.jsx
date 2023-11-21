@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosInstance from "../../RequestUrl";
 
 
 
@@ -22,7 +23,7 @@ const Login = () => {
 
     try {
         
-        const response = await axios.post("http://localhost:2000/api/v1/auth/login", Data, {
+        const response = await axiosInstance.post("auth/login", Data, {
         headers: { "Content-type": "application/json" },
       });
       console.log(response);
