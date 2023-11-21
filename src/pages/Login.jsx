@@ -44,19 +44,10 @@ const Login = () => {
     }
   }
 
-  // const showToastMessage = () => {
-  //   toast.success("Success Notification !", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //   });
-  // };
+
 
   return (
     <div>
-      {/* <div>
-      <button onClick={showToastMessage}>Notify</button>
-      <ToastContainer />
-    </div> */}
-
       <h1 style={{ textAlign: "center", fontSize: "50px" }}>LOGIN</h1>
       <br />
       <div className="container">

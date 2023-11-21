@@ -49,6 +49,10 @@ const SingleBlog = () => {
       } catch (error) {
       }
     } 
+    if (!tokenString) {
+      navigate("/login")
+      
+    }
     try {
       const {data} = await axiosInstance.get(`blog/${id}`, {
         headers: {
@@ -60,7 +64,7 @@ const SingleBlog = () => {
     } catch (error) {
       // Handle the error appropriately for your application
       if (error.data && error.data.status === 401) {
-        console.error("Request error:", error.message);
+        // console.error("Request error:", error.message);
         navigate("/login");
       } else {
       }
