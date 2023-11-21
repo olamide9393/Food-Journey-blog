@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
+import ReceptSideBar from "../component/ReceptSideBar";
 
 const ReceptPage4 = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -28,6 +29,8 @@ const ReceptPage4 = () => {
   }
   return (
     <div>
+      <ReceptSideBar />
+
       {loading ? (
         <h1>
           <div

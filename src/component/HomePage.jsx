@@ -126,7 +126,7 @@ const HomePage = () => {
           </h1>
         ) : (
           blogDatas?.map((elem) => (
-            <div className="container-fluid " style={{ marginTop: "50px" }}>
+            <div className="container " style={{ marginTop: "50px" }}>
               <div className="row">
                 {/* <div className="col-sm-4">hello</div> */}
                 <br />
