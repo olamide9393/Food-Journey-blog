@@ -112,6 +112,7 @@ const SingleRecept = () => {
                         id="floatingTextarea2"
                         style={{ height: "100px" }}
                       ></textarea>
+                      olamide
                       <label htmlFor="floatingTextarea2">Your messages</label>
                     </div>
                   </div>

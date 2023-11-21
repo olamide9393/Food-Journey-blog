@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
+import ReceptSideBar from "../component/ReceptSideBar";
 
 const Smoothies = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -31,6 +32,7 @@ const Smoothies = () => {
   }
   return (
     <div>
+     <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -46,15 +48,16 @@ const Smoothies = () => {
               <br />
 
               <div className="col-sm-3">
-                <div className="card" style={{ width: "18rem" }}>
-                  <img src="..." className="card-img-top" alt="..." />
+                <div className="card" style={{ width: "25rem" }}>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
                   <div className="card-body">
-                    <p className="card-text">{elem.title}</p>
+                    <h5 className="card-title">{elem.title}</h5>
+
                     <Link
-                      style={{ color: "#f1356d" }}
+                      className="btn btn-success"
                       to={"/recept/" + elem._id}
                     >
-                      read more
+                      READ MORE
                     </Link>
                   </div>
                 </div>

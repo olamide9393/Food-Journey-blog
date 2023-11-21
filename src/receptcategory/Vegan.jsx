@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
+import ReceptSideBar from "../component/ReceptSideBar";
 const Vegan = () => {
   const [blogDatas, setblogDatas] = useState([]);
   const [loading, setloading] = useState(false);
@@ -14,7 +15,7 @@ const Vegan = () => {
     try {
       const { data } = await axiosInstance.get("Recept/getRecept/");
       const veganCategory = data.result.filter(
-        (recept) => recept.category === "Coffee"
+        (recept) => recept.category === "vegan"
       );
       console.log(chemists, "cayeen");
 
@@ -26,6 +27,7 @@ const Vegan = () => {
   }
   return (
     <div>
+     <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -41,15 +43,16 @@ const Vegan = () => {
               <br />
 
               <div className="col-sm-3">
-                <div className="card" style={{ width: "18rem" }}>
-                  <img src="..." className="card-img-top" alt="..." />
+                <div className="card" style={{ width: "25rem" }}>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
                   <div className="card-body">
-                    <p className="card-text">{elem.title}</p>
+                    <h5 className="card-title">{elem.title}</h5>
+
                     <Link
-                      style={{ color: "#f1356d" }}
+                      className="btn btn-success"
                       to={"/recept/" + elem._id}
                     >
-                      read more
+                      READ MORE
                     </Link>
                   </div>
                 </div>
