@@ -55,6 +55,7 @@ const SingleRecept = () => {
       // Handle the error appropriately for your application
       if (error.data && error.data.status === 401) {
         console.error("Request error:", error.message);
+        window.location.reload();
         navigate("/login");
         console.log(error);
       } else {
