@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
-
-
-
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [Data, setData] = useState();
@@ -18,14 +15,13 @@ const Login = () => {
     const value = e.target.value;
     setData({ ...Data, [name]: value });
   }
-//   console.log(Data, 'testing');
+  //   console.log(Data, 'testing');
 
   async function handleClick(e) {
     e.preventDefault();
 
     try {
-        
-        const response = await axiosInstance.post("auth/login", Data, {
+      const response = await axiosInstance.post("auth/login", Data, {
         headers: { "Content-type": "application/json" },
       });
       console.log(response);
@@ -36,31 +32,29 @@ const Login = () => {
       toast.success(response.data.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
-    navigate("/");
 
+      navigate("/");
     } catch (error) {
-         console.log(error);
+      console.log(error);
       setError(error?.response?.data?.error);
-      alert(error.response.data.error);
-   
+      toast.error(error.response.data.error, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
-    
   }
-  
-  const showToastMessage = () => {
-    toast.success("Success Notification !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  };
+
+  // const showToastMessage = () => {
+  //   toast.success("Success Notification !", {
+  //     position: toast.POSITION.TOP_RIGHT,
+  //   });
+  // };
 
   return (
     <div>
-<div>
+      {/* <div>
       <button onClick={showToastMessage}>Notify</button>
       <ToastContainer />
-    </div>
-
-
+    </div> */}
 
       <h1 style={{ textAlign: "center", fontSize: "50px" }}>LOGIN</h1>
       <br />
@@ -118,29 +112,17 @@ const Login = () => {
                     </Link>
                   </div>
                   <div>
-
-                  <button
-
-                    type="submit"
-                    className="btn btn-success btn-block mb-4"
-                  >
-      {/* <ToastContainer /> */}
-
-                    LOGIN
-                  </button>
-      {/* <ToastContainer /> */}
-
+                    <button
+                      type="submit"
+                      className="btn btn-success btn-block mb-4"
+                    >
+                      LOGIN
+                    </button>
                   </div>
 
-                  {/* <div>
-      <button type="submit" onClick={handleClick}>login</button>
-      <ToastContainer />
-    </div> */}
-                  {Error && <div style={{ color: "red" }}>{Error}</div>}
+                  {/* {Error && <div style={{ color: "red" }}>{Error}</div>} */}
                 </form>
                 <ToastContainer />
-
-    
               </div>
             </div>
           </div>

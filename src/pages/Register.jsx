@@ -1,9 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
-// import axiosInstance from "../../RequestUrl";
-// import signup from "../assets/login.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Register = () => {
@@ -35,6 +34,9 @@ const Register = () => {
       }, 1000);
     } catch (error) {
       setError(error?.response?.data?.error);
+      toast.error(error.response.data.error, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
   return (
@@ -132,6 +134,7 @@ const Register = () => {
                     </div>
                   )}
                 </form>
+                <ToastContainer/>
               </div>
             </div>
           </div>
