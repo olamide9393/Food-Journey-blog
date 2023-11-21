@@ -6,7 +6,6 @@ import Sidebar from "../component/BlogSideBar";
 
 const Blog = () => {
   const [blogDatas, setblogDatas] = useState([]);
-
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
