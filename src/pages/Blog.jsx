@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
 import Sidebar from "../component/BlogSideBar";
+import ScrollUP from "./ScrollUP";
+import ScrollToTopButton from "./ScrollUP";
 
 
 const Blog = () => {
@@ -95,6 +97,7 @@ const Blog = () => {
           </li>
         </ul>
       </div>
+      <ScrollUP/>
     </div>
   );
 };

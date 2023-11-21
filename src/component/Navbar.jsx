@@ -43,6 +43,7 @@ const Navbar = () => {
         },
       });
       setData(response.data);
+      // console.log(response.data,"test");
     } catch (error) {
       console.log(error);
       // Handle the error appropriately for your application
@@ -65,6 +66,9 @@ const Navbar = () => {
     setIsLoggedIn(false);
     navigate("/login");
   };
+
+
+  
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark">
