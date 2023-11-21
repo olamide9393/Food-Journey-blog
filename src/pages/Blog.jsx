@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
 import Sidebar from "../component/BlogSideBar";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+
 
 const Blog = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -27,18 +26,8 @@ const Blog = () => {
   }
 
 
-  const showToastMessage = () => {
-    toast.success("Success Notification !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  };
   return (
     <div>
-
-<div>
-      <button onClick={showToastMessage}>Notify</button>
-      <ToastContainer />
-    </div>
       <Sidebar />
       {loading ? (
         <h1>

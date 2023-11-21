@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
+import Sidebar from "../component/BlogSideBar";
 
 const MilkProduct = () => {
   const [blogDatas, setblogDatas] = useState([]);
@@ -31,6 +32,7 @@ const MilkProduct = () => {
   }
   return (
     <div>
+      <Sidebar />
       {loading ? (
         <h1>
           <div
@@ -40,26 +42,21 @@ const MilkProduct = () => {
         </h1>
       ) : (
         blogDatas?.map((elem) => (
-          <div className="container-fluid " style={{ marginTop: "50px" }}>
+          <div className="container" style={{ marginTop: "50px" }}>
             <div className="row">
-              {/* <div className="col-sm-4">hello</div> */}
               <br />
-
-              <div className="col-sm-3">
-                <div className="card" style={{ width: "18rem" }}>
-                  <img src="..." className="card-img-top" alt="..." />
+              <div className="col-sm-4">
+                <div className="card" style={{ width: "25rem" }}>
+                  <img src={elem.photo} className="card-img-top" alt="..." />
                   <div className="card-body">
-                    <p className="card-text">{elem.title}</p>
-                    <Link
-                      style={{ color: "#f1356d" }}
-                      to={"/recept/" + elem._id}
-                    >
-                      read more
+                    <h5 className="card-title">{elem.title}</h5>
+
+                    <Link className="btn btn-success" to={"/blog/" + elem._id}>
+                      READ MORE
                     </Link>
                   </div>
                 </div>
               </div>
-              <br />
             </div>
           </div>
         ))
