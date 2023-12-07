@@ -236,7 +236,6 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <p style={{ marginTop: "150px" }}></p>
       <Outlet />
       <br />
       <div style={{ border: "1px solid green" }}></div>
