@@ -77,6 +77,14 @@ const HomePage = () => {
       <br />
       <br />
       <div>
+
+        <link to="https://bulk-sms-frontend-seven.vercel.app"> 
+          <img
+              src={avocado}
+              alt="avocado"
+              style={{ width: "100%", height: "50vh" }}
+            />
+        </link>
         <h1 style={{ textAlign: "center" }}>LATEST BLOG</h1>
         <br />
         {loading ? (
