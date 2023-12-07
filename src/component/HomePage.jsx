@@ -73,13 +73,7 @@ const HomePage = () => {
         </div>
       </div>
       <br />
-      <link to="https://bulk-
-sms-frontend-seven.vercel.app">
-<img
-src={avocado} alt="avocado" style=<{ width:
-"100%", height: "50vh" }
-/>
-</link>
+   
     
       
       
