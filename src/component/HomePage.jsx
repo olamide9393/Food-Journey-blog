@@ -51,18 +51,16 @@ const HomePage = () => {
               about healthy eating here.On this site you can both read blog
               posts and use healthy recepts
             </p>
-            <button className="btn btn-success">
-              <Link
-                style={{
-                  color: "white",
-                  borderRadius: "100%",
-                  textDecoration: "none",
-                }}
-                to="/login"
-              >
-                START READING
-              </Link>
-            </button>
+          <Link
+          to="/login"
+          style={{
+            color: "white",
+            borderRadius: "100%",
+            textDecoration: "none",
+          }}
+        >
+          <button className="btn btn-success">START READING</button>
+        </Link>
           </div>
           <br />
           <div className="col-sm-6">
