@@ -74,7 +74,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-md navbar-dark">
         <Link
           to="/"
-          style={{ color: "black", fontSize: "23px" }}
+          style={{ color: "black", fontSize: "15px" }}
           className="navbar-brand"
         >
           FOOD JOURNEY BLOG
