@@ -78,9 +78,8 @@ const HomePage = () => {
       <br />
       
 
-        <link to="https://bulk-sms-frontend-seven.vercel.app"> 
-         send bulk messages
-        </link>
+       
+    
         <h1 style={{ textAlign: "center" }}>LATEST BLOG</h1>
         <br />
         {loading ? (
