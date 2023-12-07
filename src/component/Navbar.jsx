@@ -77,7 +77,7 @@ const Navbar = () => {
           style={{ color: "black", fontSize: "15px" }}
           className="navbar-brand"
         >
-          FOOD JOURNEY BLOG
+       <h6>FOOD JOURNEY BLOG</h6>
         </Link>
 
         {isLoggedIn ? (
