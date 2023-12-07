@@ -116,8 +116,6 @@ const HomePage = () => {
         )}
       </div>
 
-      <br />
-      <br />
       <div>
         <h1 style={{ textAlign: "center" }}>MOST READ RECEPTS</h1>
 
