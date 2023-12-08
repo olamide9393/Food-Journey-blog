@@ -5,6 +5,7 @@ import avocado from "../assets/avocado.jpeg";
 
 const HomePage = () => {
   const [blogDatas, setblogDatas] = useState([]);
+  const [Data, setData] = useState();
   const [loading, setloading] = useState(false);
   useEffect(() => {
     history();
@@ -38,11 +39,21 @@ const HomePage = () => {
     } finally {
       setloading(false);
     }
+    try {
+      const { data } = await axiosInstance.get("recept/getrecept", {});
+      // console.log(data);
+      const firstFourItems = data.result.slice(0, 4);
+      setData(firstFourItems);
+    } catch (error) {
+    } finally {
+      setloading(false);
+    }
   }
 
   return (
     <div>
       <>
+        <br />
         <div className="container">
           <div className="row">
             <div className="col-sm-6" style={{ marginTop: "100px" }}>
@@ -73,6 +84,8 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        <br />
+        <br />
         <h1 style={{ textAlign: "center" }}>LATEST BLOG</h1>
         <br />
         {loading ? (
@@ -107,7 +120,8 @@ const HomePage = () => {
           ))
         )}
       </>
-
+      <br />
+      <br />
       <div>
         <h1 style={{ textAlign: "center" }}>MOST READ RECEPTS</h1>
 
@@ -119,7 +133,7 @@ const HomePage = () => {
             ></div>
           </h1>
         ) : (
-          blogDatas?.map((elem) => (
+          Data?.map((elem) => (
             <div className="container " style={{ marginTop: "50px" }}>
               <div className="row">
                 {/* <div className="col-sm-4">hello</div> */}
@@ -146,7 +160,8 @@ const HomePage = () => {
           ))
         )}
       </div>
-      <br /><br />
+      <br />
+      <br />
     </div>
   );
 };

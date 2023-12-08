@@ -80,7 +80,7 @@ const Navbar = () => {
 
         {isLoggedIn ? (
           <>
-            <span>Welcome {data?.name}</span>
+            <span>Hi {data?.name}</span>
           </>
         ) : (
           <div></div>
@@ -234,6 +234,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <br /><br /><br />
       <Outlet />
       
       <div style={{ border: "1px solid green" }}></div>
