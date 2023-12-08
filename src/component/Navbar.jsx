@@ -166,7 +166,7 @@ const Navbar = () => {
               <>
                 <li className="nav-item">
                   <button
-                    className="nav-link"
+                    className="nav-link btn btn-success"
                     onClick={handleLogout}
                     style={{
                       marginLeft: "150px",
