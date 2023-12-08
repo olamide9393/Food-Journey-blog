@@ -31,7 +31,7 @@ const ScrollUP = () => {
   }, []);
 
   return (
-    <div>
+    <div >
       {isVisible && (
         <button onClick={scrollToTop} className="scroll-to-top">
           Scroll to Top

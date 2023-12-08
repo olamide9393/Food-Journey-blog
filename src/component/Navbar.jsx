@@ -67,17 +67,15 @@ const Navbar = () => {
     navigate("/login");
   };
 
-
-  
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark">
         <Link
           to="/"
-          style={{ color: "black", fontSize: "23px" }}
+          style={{ color: "black", fontSize: "15px" }}
           className="navbar-brand"
         >
-          FOOD JOURNEY BLOG
+          <h5>FOOD JOURNEY BLOG</h5>
         </Link>
 
         {isLoggedIn ? (
