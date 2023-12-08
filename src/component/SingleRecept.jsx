@@ -49,7 +49,6 @@ const SingleRecept = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(data);
       setrecept(data);
     } catch (error) {
       // Handle the error appropriately for your application
@@ -81,43 +80,29 @@ const SingleRecept = () => {
           {recept && (
             <div>
               <h1 style={{ textAlign: "center" }}>{recept.title}</h1>
-
               <div className="container">
-                <div className="row">
-                  <div className="col-sm-6">
-                    <img src={recept.photo} />
-                  </div>
-                  <div className="col-sm-6">
-                    <h3>ingredients:</h3>
-                    <ul>
-                      <li>{recept.ingredients}</li>
-                    </ul>
-                  </div>
-                </div>
+                <img src={recept.photo} />
+              </div>
+              <h2 style={{ textAlign: "center" }}>{recept.description}</h2>
+
+              <h3>ingredients:</h3>
+              <li>{recept.ingredients}</li>
+              <br />
+              <h3>preparation:</h3>
+              <div>{recept.preparation}</div>
+              <br />
+              <div className="form-floating">
+                <label htmlFor="floatingTextarea2">Your messages</label>
+                <textarea
+                  className="form-control"
+                  placeholder="Your messages"
+                  id="floatingTextarea2"
+                  style={{ height: "200px", width: "500px" }}
+                ></textarea>
               </div>
               <br />
-
-              <div className="container">
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div>{recept.description}</div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div>{recept.preparation}</div>
-
-                    <div className="form-floating">
-                      <textarea
-                        className="form-control"
-                        placeholder="Your messages"
-                        id="floatingTextarea2"
-                        style={{ height: "100px" }}
-                      ></textarea>
-                      olamide
-                      <label htmlFor="floatingTextarea2">Your messages</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <br />
+              <br />
             </div>
           )}
         </div>

@@ -1,19 +1,14 @@
-import axios from 'axios';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import Sidebar from './BlogSideBar';
-import axiosInstance from '../../RequestUrl';
-
-
+import axios from "axios";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import Sidebar from "./BlogSideBar";
+import axiosInstance from "../../RequestUrl";
 
 const SingleBlog = () => {
   const { id } = useParams();
   const [blog, setblog] = useState();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loading, setloading] = useState(false);
-
-
-  
 
   useEffect(() => {
     getSingleBlog();
@@ -21,7 +16,7 @@ const SingleBlog = () => {
   async function getSingleBlog() {
     // try {
     //   const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
-      
+
     //   setblog(data);
     // } catch (error) {
     //   console.log(error);
@@ -29,8 +24,6 @@ const SingleBlog = () => {
     // finally {
     //   setloading(false);
     // }
-
-
 
     let token; // Declare the token variable in the appropriate scope
 
@@ -46,15 +39,13 @@ const SingleBlog = () => {
         } else {
           console.log("Token is missing or invalid.");
         }
-      } catch (error) {
-      }
-    } 
+      } catch (error) {}
+    }
     if (!tokenString) {
-      navigate("/login")
-      
+      navigate("/login");
     }
     try {
-      const {data} = await axiosInstance.get(`blog/${id}`, {
+      const { data } = await axiosInstance.get(`blog/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -69,23 +60,13 @@ const SingleBlog = () => {
       } else {
       }
     } finally {
-     setloading(false);
-     }
-
-
-
-
-
-
-
-
-
+      setloading(false);
+    }
   }
-  
-  
+
   return (
     <div>
-      <Sidebar/>
+      <Sidebar />
       {loading ? (
         <h1>
           <div
@@ -97,48 +78,36 @@ const SingleBlog = () => {
         <div>
           {blog && (
             <div>
+              <br />
               <h1 style={{ textAlign: "center" }}>{blog.title}</h1>
-              <br /><br />
-
+              <br />
+              <br />
               <div className="container">
-                
-                    <img src={blog.photo}  />
-                  </div>
-              <br /><br /><br />
-
-              <div className="container"  >
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div>{blog.description}</div>
-                  </div>
-                  <br /><br />
-                  <div className="col-sm-6">
-                    <div>
-                      {blog.benefits}
-                    </div>
-
-                  <div className="form-floating">
-                    <label htmlFor="floatingTextarea2" style={{fontSize:"30px"}}>Comments:</label>
-                    <textarea
-                      className="form-control"
-                      placeholder="Your messages"
-                      id="floatingTextarea2"
-                      style={{ height: "100px" }}
-                    ></textarea>
-                  </div>
-                  </div>
-                </div>
+                <img src={blog.photo} />
               </div>
+              <br />
+              <h4 style={{textAlign:'center'}}>{blog.description}</h4>
+               <br /> 
+              <div style={{textAlign:'center'}}>{blog.benefits}</div>
+              <br />  
+              <div className="form-floating">
+                <label htmlFor="floatingTextarea2" style={{ fontSize: "30px", }}>
+                  Comments:
+                </label>
+                <textarea
+                  className="form-control"
+                  placeholder="Your messages"
+                  id="floatingTextarea2"
+                  style={{ height: "200px",width:'500px' }}
+                ></textarea>
+              </div>
+              <br /><br /><br />
             </div>
           )}
         </div>
       )}
 
-
-      
       {/* <h1> hello world { id }</h1> */}
-      
- 
     </div>
   );
 };

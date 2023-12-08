@@ -37,6 +37,7 @@ const GlutenFree = () => {
   }
   return (
     <div>
+    
        <ReceptSideBar />
       {loading ? (
         <h1>

@@ -35,6 +35,8 @@ import Drinks from "../receptcategory/Drinks";
 import GlutenFree from "../receptcategory/GlutenFree";
 import Salad from "../receptcategory/Salad";
 import Snacks from "../receptcategory/Snacks";
+import Vegans from "../receptcategory/Vegans";
+import Smoothiess from "../receptcategory/Smoothiess";
 
 
 const Routes = () => {
@@ -157,7 +159,7 @@ const Routes = () => {
           path: "/Blog/vegan",
           element: <Vegan />,
         },
-        {
+        { 
           path: "/Blog/vegetables",
           element: <Vegetables />,
         },
@@ -165,29 +167,30 @@ const Routes = () => {
           path: "recept/desserts",
           element: <Desserts />,
         },
+     
         {
-          path: "drinks",
+          path: "recept/drinks",
           element: <Drinks />,
         },
         {
-          path: "gluten-free",
+          path: "/recept/gluten-free",
           element: <GlutenFree />,
         },
         {
-          path: "salad",
+          path: "recept/salad",
           element: <Salad />,
         },
         {
-          path: "smoothies",
-          element: <Smoothies />,
+          path: "recept/smoothies",
+          element: <Smoothiess />,
         },
         {
-          path: "snacks",
+          path: "recept/snacks",
           element: <Snacks />,
         },
         {
-          path: "vegan",
-          element: <Vegan />,
+          path: "recept/vegan",
+          element: <Vegans />,
         },
       ],
     },

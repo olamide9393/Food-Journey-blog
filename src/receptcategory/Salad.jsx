@@ -19,12 +19,12 @@ const Salad = () => {
       const { data } = await axiosInstance.get("Recept/getRecept/");
       console.log(data);
 
-      const saldCategory = data.result.filter(
-        (recept) => recept.category === "salad"
+      const saladCategory = data.result.filter(
+        (recept) => recept.category === "Salads"
       );
-      console.log(chemists, "cayeen");
+      // console.log(saladCategory, "cayeen");
 
-      setblogDatas(saldCategory);
+      setblogDatas(saladCategory);
     } catch (error) {
     } finally {
       setloading(false);
@@ -32,6 +32,7 @@ const Salad = () => {
   }
   return (
     <div>
+      
      <ReceptSideBar />
       {loading ? (
         <h1>

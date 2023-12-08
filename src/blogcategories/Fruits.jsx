@@ -18,7 +18,7 @@ const Fruits = () => {
       console.log(data);
 
       const FruitsCategory = data.result.filter(
-        (blog) => blog.category === "fruit"
+        (blog) => blog.category === "fruits"
       );
       // console.log(chemists,'cayeen');
 

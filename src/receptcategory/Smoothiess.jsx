@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../RequestUrl";
 import ReceptSideBar from "../component/ReceptSideBar";
-const Vegan = () => {
+
+const Smoothiess = () => {
   const [blogDatas, setblogDatas] = useState([]);
+
   const [loading, setloading] = useState(false);
+
   useEffect(() => {
     history();
   }, []);
@@ -13,13 +16,15 @@ const Vegan = () => {
     setloading(true);
 
     try {
-      const { data } = await axiosInstance.get("Recept/getRecept/");
-      const veganCategory = data.result.filter(
-        (recept) => recept.category === "vegan"
-      );
-      console.log(chemists, "cayeen");
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
+      console.log(data);
 
-      setblogDatas(veganCategory);
+      const smoothiesCategory = data.result.filter(
+        (recept) => recept.category === "Smoothies"
+      );
+      console.log(smoothiesCategory, "cayeen");
+
+      setblogDatas(smoothiesCategory);
     } catch (error) {
     } finally {
       setloading(false);
@@ -27,7 +32,7 @@ const Vegan = () => {
   }
   return (
     <div>
-     <ReceptSideBar />
+      <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -84,4 +89,4 @@ const Vegan = () => {
   );
 };
 
-export default Vegan;
+export default Smoothiess;

@@ -25,7 +25,7 @@ const Snacks = () => {
       const snackCategory = data.result.filter(recept =>
         recept.category === 'snack'
       );
-      console.log(chemists,'cayeen');
+      // console.log(snackCategory,'cayeen');
       setblogDatas(snackCategory);
     } catch (error) {
     } finally {

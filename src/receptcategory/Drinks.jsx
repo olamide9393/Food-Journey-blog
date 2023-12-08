@@ -20,9 +20,9 @@ const Drinks = () => {
       console.log(data);
 
       const drinkCategory = data.result.filter(
-        (recept) => recept.category === "drink"
+        (recept) => recept.category === "drinks"
       );
-      console.log(chemists, "cayeen");
+      // console.log(drinkCategory, "cayeen");
 
       setblogDatas(drinkCategory);
     } catch (error) {
