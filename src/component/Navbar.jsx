@@ -234,7 +234,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <br /><br /><br />
+      <br />
       <Outlet />
       
       <div style={{ border: "1px solid green" }}></div>
