@@ -14,6 +14,8 @@ const SingleBlog = () => {
     getSingleBlog();
   }, []);
   async function getSingleBlog() {
+    setloading(true)
+
     // try {
     //   const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
 
@@ -82,7 +84,7 @@ const SingleBlog = () => {
               <h1 style={{ textAlign: "center" }}>{blog.title}</h1>
               <br />
               <br />
-              <div className="container">
+              <div className="container" style={{width:'auto',height:'100%'}}>
                 <img src={blog.photo} />
               </div>
               <br />

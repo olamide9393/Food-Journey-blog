@@ -32,7 +32,7 @@ const Drinks = () => {
   }
   return (
     <div>
-     <ReceptSideBar />
+      <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -69,23 +69,6 @@ const Drinks = () => {
       )}
       <br />
       <br />
-      errer
-      <div className="container">
-        <ul className="pagination" style={{ gap: "20px" }}>
-          <li className="page-item">
-            {" "}
-            <Link className="page-link" to="/recept">
-              1
-            </Link>{" "}
-          </li>
-          <li className="page-item">
-            {" "}
-            <Link className="page-link" to="/recept/2">
-              2
-            </Link>{" "}
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };

@@ -16,18 +16,13 @@ const Desserts = () => {
     setloading(true);
 
     try {
-      const { data } = await axiosInstance.get(
-        "Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
       console.log(data);
 
-      const dessertsCategory = data.result.filter(blog =>
-        blog.category === 'dessert'
+      const dessertsCategory = data.result.filter(
+        (blog) => blog.category === "dessert"
       );
-      console.log(chemists,'cayeen');
-
-
+      // console.log(dessertsCategory,'cayeen');
 
       setblogDatas(dessertsCategory);
     } catch (error) {
@@ -37,7 +32,7 @@ const Desserts = () => {
   }
   return (
     <div>
-     <ReceptSideBar />
+      <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -47,7 +42,7 @@ const Desserts = () => {
         </h1>
       ) : (
         blogDatas?.map((elem) => (
-          <div className="container-fluid " style={{ marginTop: "50px" }}>
+          <div className="container" style={{ marginTop: "50px" }}>
             <div className="row">
               {/* <div className="col-sm-4">hello</div> */}
               <br />
@@ -72,18 +67,6 @@ const Desserts = () => {
           </div>
         ))
       )}
-      
-      <br /><br />
-      <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/recept">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/recept/2" >2</Link> </li>
-    
-  </ul>
-</div>
-  
-de ke 
-
     </div>
   );
 };

@@ -16,14 +16,11 @@ const Snacks = () => {
     setloading(true);
 
     try {
-      const { data } = await axiosInstance.get(
-        "Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
       console.log(data);
 
-      const snackCategory = data.result.filter(recept =>
-        recept.category === 'snack'
+      const snackCategory = data.result.filter(
+        (recept) => recept.category === "snack"
       );
       // console.log(snackCategory,'cayeen');
       setblogDatas(snackCategory);
@@ -69,17 +66,6 @@ const Snacks = () => {
           </div>
         ))
       )}
-      <br /><br />
-      <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/recept">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/recept/2" >2</Link> </li>
-    
-  </ul>
-</div>
-  
-
-
     </div>
   );
 };

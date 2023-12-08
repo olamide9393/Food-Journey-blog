@@ -16,18 +16,13 @@ const GlutenFree = () => {
     setloading(true);
 
     try {
-      const { data } = await axiosInstance.get(
-        "Recept/getRecept/",
-        {}
-      );
+      const { data } = await axiosInstance.get("Recept/getRecept/", {});
       console.log(data);
 
-      const glutenFreeCategory = data.result.filter(recept =>
-        recept.category === 'gluten-free'
+      const glutenFreeCategory = data.result.filter(
+        (recept) => recept.category === "gluten-free"
       );
-      console.log(chemists,'cayeen');
-
-
+      // console.log(glutenFreeCategory,'cayeen');
 
       setblogDatas(glutenFreeCategory);
     } catch (error) {
@@ -37,8 +32,7 @@ const GlutenFree = () => {
   }
   return (
     <div>
-    
-       <ReceptSideBar />
+      <ReceptSideBar />
       {loading ? (
         <h1>
           <div
@@ -48,7 +42,7 @@ const GlutenFree = () => {
         </h1>
       ) : (
         blogDatas?.map((elem) => (
-          <div className="container-fluid " style={{ marginTop: "50px" }}>
+          <div className="container" style={{ marginTop: "50px" }}>
             <div className="row">
               {/* <div className="col-sm-4">hello</div> */}
               <br />
@@ -73,17 +67,6 @@ const GlutenFree = () => {
           </div>
         ))
       )}
-      <br /><br />
-      <div className="container" >
-  <ul className="pagination" style={{gap:"20px"}}>
-    <li className="page-item"> <Link className="page-link"  to="/recept">1</Link> </li>
-    <li className="page-item"> <Link className="page-link"to="/recept/2" >2</Link> </li>
-    
-  </ul>
-</div>
-  
-
-
     </div>
   );
 };

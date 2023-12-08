@@ -14,6 +14,8 @@ const SingleRecept = () => {
     SingleRecept();
   }, []);
   async function SingleRecept() {
+    setloading(true)
+
     // try {
     //   const { data } = await axios.get(
     //     `http://localhost:2000/api/v1/recept/${id}`

@@ -30,7 +30,7 @@ const Fruits = () => {
   }
   return (
     <div>
-       <Sidebar />
+      <Sidebar />
       {loading ? (
         <h1>
           <div
@@ -59,24 +59,6 @@ const Fruits = () => {
           </div>
         ))
       )}
-      <br />
-      <br />
-      <div className="container">
-        <ul className="pagination" style={{ gap: "20px" }}>
-          <li className="page-item">
-            {" "}
-            <Link className="page-link" to="/Blog">
-              1
-            </Link>{" "}
-          </li>
-          <li className="page-item">
-            {" "}
-            <Link className="page-link" to="/Blog/2">
-              2
-            </Link>{" "}
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };
