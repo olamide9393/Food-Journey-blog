@@ -75,7 +75,11 @@ const Navbar = () => {
           style={{ color: "black", fontSize: "15px" }}
           className="navbar-brand"
         >
+<<<<<<< HEAD
           <h5>FOOD JOURNEY BLOG</h5>
+=======
+       <h6>FOOD JOURNEY BLOG</h6>
+>>>>>>> 50fe2a1091adba63ce3ceab07e2781ef8f83ea65
         </Link>
 
         {isLoggedIn ? (
@@ -234,9 +238,8 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <p style={{ marginTop: "150px" }}></p>
       <Outlet />
-      <br />
+      
       <div style={{ border: "1px solid green" }}></div>
       <br />
       <Footer />

@@ -51,18 +51,16 @@ const HomePage = () => {
               about healthy eating here.On this site you can both read blog
               posts and use healthy recepts
             </p>
-            <button className="btn btn-success">
-              <Link
-                style={{
-                  color: "white",
-                  borderRadius: "100%",
-                  textDecoration: "none",
-                }}
-                to="/login"
-              >
-                START READING
-              </Link>
-            </button>
+          <Link
+          to="/login"
+          style={{
+            color: "white",
+            borderRadius: "100%",
+            textDecoration: "none",
+          }}
+        >
+          <button className="btn btn-success">START READING</button>
+        </Link>
           </div>
           <br />
           <div className="col-sm-6">
@@ -75,8 +73,13 @@ const HomePage = () => {
         </div>
       </div>
       <br />
-      <br />
-      <div>
+   
+    
+      
+      
+
+       
+    
         <h1 style={{ textAlign: "center" }}>LATEST BLOG</h1>
         <br />
         {loading ? (
@@ -112,8 +115,6 @@ const HomePage = () => {
         )}
       </div>
 
-      <br />
-      <br />
       <div>
         <h1 style={{ textAlign: "center" }}>MOST READ RECEPTS</h1>
 
