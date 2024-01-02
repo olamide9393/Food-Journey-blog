@@ -3,6 +3,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ReceptSideBar from "./ReceptSideBar";
 import axiosInstance from "../../RequestUrl";
+import './Footer.css'
+
 
 const SingleRecept = () => {
   const { id } = useParams();
@@ -82,7 +84,7 @@ const SingleRecept = () => {
           {recept && (
             <div>
               <h1 style={{ textAlign: "center" }}>{recept.title}</h1>
-              <div className="container">
+              <div className="photo-size">
                 <img src={recept.photo} />
               </div>
               <h2 style={{ textAlign: "center" }}>{recept.description}</h2>

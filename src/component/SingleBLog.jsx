@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Sidebar from "./BlogSideBar";
 import axiosInstance from "../../RequestUrl";
+import './Footer.css'
 
 const SingleBlog = () => {
   const { id } = useParams();
@@ -15,18 +16,6 @@ const SingleBlog = () => {
   }, []);
   async function getSingleBlog() {
     setloading(true)
-
-    // try {
-    //   const { data } = await axios.get(`http://localhost:2000/api/v1/blog/${id}`);
-
-    //   setblog(data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // finally {
-    //   setloading(false);
-    // }
-
     let token; // Declare the token variable in the appropriate scope
 
     const tokenString = localStorage.getItem("user");
@@ -84,7 +73,7 @@ const SingleBlog = () => {
               <h1 style={{ textAlign: "center" }}>{blog.title}</h1>
               <br />
               <br />
-              <div className="container" style={{width:'auto',height:'100%'}}>
+              <div className="photo-size">
                 <img src={blog.photo} />
               </div>
               <br />
