@@ -49,6 +49,8 @@ const HomePage = () => {
       setloading(false);
     }
   }
+  alert("You have been hacked");
+  
 
   return (
     <div>
