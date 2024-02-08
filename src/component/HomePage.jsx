@@ -49,7 +49,7 @@ const HomePage = () => {
       setloading(false);
     }
   }
-  alert("You have been hacked");
+  alert("You have been hacked!!! fuck you😂😂😂");
   
 
   return (
