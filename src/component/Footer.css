@@ -5,9 +5,9 @@
 }
 
 .photo-size{
-         width: 70vw;
+         width: 70px;
          height: 250px;
-         border-radius: 10px;
-         object-fit: cover;
+         /* border-radius: 10px;
+         object-fit: cover; */
 }
 

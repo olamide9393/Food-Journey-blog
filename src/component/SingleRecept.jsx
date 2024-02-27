@@ -84,11 +84,12 @@ const SingleRecept = () => {
           {recept && (
             <div>
               <h1 style={{ textAlign: "center" }}>{recept.title}</h1>
-              <div className="photo-size">
-                <img src={recept.photo} />
+              <div className="d-flex justify-content-center" >
+                <img src={recept.photo} className="img-fluid rounded"/>
               </div>
+              <br />
               <h2 style={{ textAlign: "center" }}>{recept.description}</h2>
-
+<br />
               <h3>ingredients:</h3>
               <li>{recept.ingredients}</li>
               <br />

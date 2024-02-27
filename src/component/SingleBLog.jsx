@@ -73,8 +73,8 @@ const SingleBlog = () => {
               <h1 style={{ textAlign: "center" }}>{blog.title}</h1>
               <br />
               <br />
-              <div className="photo-size">
-                <img src={blog.photo} />
+              <div className="d-flex justify-content-center" >
+                <img src={blog.photo} className="img-fluid rounded"/>
               </div>
               <br />
               <h4 style={{textAlign:'center'}}>{blog.description}</h4>
