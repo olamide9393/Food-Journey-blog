@@ -96,7 +96,7 @@ const SingleRecept = () => {
               <h3>preparation:</h3>
               <div>{recept.preparation}</div>
               <br />
-              <div className="form-floating">
+              {/* <div className="form-floating">
                 <label htmlFor="floatingTextarea2">Your messages</label>
                 <textarea
                   className="form-control"
@@ -104,7 +104,7 @@ const SingleRecept = () => {
                   id="floatingTextarea2"
                   style={{ height: "200px", width: "500px" }}
                 ></textarea>
-              </div>
+              </div> */}
               <br />
               <br />
               <br />

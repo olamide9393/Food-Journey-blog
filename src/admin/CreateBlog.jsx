@@ -21,20 +21,20 @@ const CreateBlog = () => {
                e.preventDefault();
 
                       // image
-                      if (file) {
-                        const data= new FormData()
-                        const filename=Date.now()+file.img
-                        data.append("img",filename)
-                        data.append("file",file)
-                        newPost.photo= filename;
-                        try {
-                              const res = await axios.post("http://localhost:2000/api/v1/upload/")
-                              console.log(res);
-                        } catch (error) {
-                              console.log(error);
-                        }
+                  //     if (file) {
+                  //       const data= new FormData()
+                  //       const filename=Date.now()+file.img
+                  //       data.append("img",filename)
+                  //       data.append("file",file)
+                  //       newPost.photo= filename;
+                  //       try {
+                  //             const res = await axios.post("http://localhost:2000/api/v1/upload/")
+                  //             console.log(res);
+                  //       } catch (error) {
+                  //             console.log(error);
+                  //       }
                         
-                     }
+                  //    }
 
                try {
                   const response = await axiosInstance.post("blog/createBlog", data,);

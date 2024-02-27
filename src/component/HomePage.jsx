@@ -102,9 +102,10 @@ const HomePage = () => {
             <div className="container" style={{ marginTop: "50px" }}>
               <div className="row">
                 <br />
-                <div className="col-sm-4">
+                <div  className="col-sm-4">
+
                   <div className="card" style={{ width: "25rem" }}>
-                    <img src={elem.photo} className="card-img-top" alt="..." />
+                    <img src={elem.photo} className="card-img-top" />
                     <div className="card-body">
                       <h5 className="card-title">{elem.title}</h5>
 

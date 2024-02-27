@@ -6,8 +6,8 @@ import MilkProduct from "../blogcategories/MilkProduct";
 import Smoothies from "../blogcategories/Smoothies";
 import Vegan from "../blogcategories/Vegan";
 import Vegetables from "../blogcategories/Vegetables";
-import AdminDashboard from "../component/AdminDashboard";
-import CreateBlog from "../component/CreateBlog";
+import AdminDashboard from "../admin/AdminDashboard";
+import CreateBlog from "../admin/CreateBlog";
 import HomePage from "../component/HomePage";
 import Navbar from "../component/Navbar";
 import Sidebar from "../component/BlogSideBar";
@@ -37,6 +37,9 @@ import Salad from "../receptcategory/Salad";
 import Snacks from "../receptcategory/Snacks";
 import Vegans from "../receptcategory/Vegans";
 import Smoothiess from "../receptcategory/Smoothiess";
+import ReceptList from "../admin/ReceptList";
+import BlogList from "../admin/BlogList";
+import CreateRecept from "../admin/CreateRecept";
 
 
 const Routes = () => {
@@ -191,6 +194,22 @@ const Routes = () => {
         {
           path: "recept/vegan",
           element: <Vegans />,
+        },
+        {
+          path: "admin",
+          element: <AdminDashboard />,
+        },
+        {
+          path: "admin/recept",
+          element: <ReceptList />,
+        },
+        {
+          path: "admin/blog",
+          element: <BlogList />,
+        },
+        {
+          path: "Create-recept",
+          element: <CreateRecept />,
         },
       ],
     },

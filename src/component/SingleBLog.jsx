@@ -81,7 +81,7 @@ const SingleBlog = () => {
                <br /> 
               <div style={{textAlign:'center'}}>{blog.benefits}</div>
               <br />  
-              <div className="form-floating">
+              {/* <div className="form-floating">
                 <label htmlFor="floatingTextarea2" style={{ fontSize: "30px", }}>
                   Comments:
                 </label>
@@ -91,7 +91,7 @@ const SingleBlog = () => {
                   id="floatingTextarea2"
                   style={{ height: "200px",width:'500px' }}
                 ></textarea>
-              </div>
+              </div> */}
               <br /><br /><br />
             </div>
           )}
