@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [Data, setData] = useState();
+  const [loading, setloading] = useState(false);
   const navigate = useNavigate();
   const [Error, setError] = useState();
 
@@ -21,6 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      setloading(true);
       const response = await axiosInstance.post("auth/login", Data, {
         headers: { "Content-type": "application/json" },
       });
@@ -32,7 +34,7 @@ const Login = () => {
       toast.success(response.data.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
-
+      setloading(false);
       navigate("/");
       window.location.reload();
     } catch (error) {
@@ -43,8 +45,6 @@ const Login = () => {
       });
     }
   }
-
-
 
   return (
     <div>
@@ -103,14 +103,33 @@ const Login = () => {
                       Register here
                     </Link>
                   </div>
-                  <div>
+                  {/* <div>
                     <button
                       type="submit"
                       className="btn btn-success btn-block mb-4"
                     >
                       LOGIN
                     </button>
-                  </div>
+                  </div> */}
+
+                  {loading ? (
+                    <h1>
+                      <div
+                        className="spinner-border text-success"
+                        style={{ width: "100px", height: "100px" }}
+                      ></div>
+                    </h1>
+                  ) : (
+                    <div>
+                  
+                    </div>
+                  )}
+                      <button
+                        type="submit"
+                        className="btn btn-success btn-block mb-4"
+                      >
+                        LOGIN
+                      </button>
 
                   {/* {Error && <div style={{ color: "red" }}>{Error}</div>} */}
                 </form>
