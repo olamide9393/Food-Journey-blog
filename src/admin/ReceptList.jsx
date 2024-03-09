@@ -46,14 +46,35 @@ const ReceptList = () => {
             <th>ACTION</th>
           </tr>
         </thead>
+        
+       
         <tbody>
         <tr>
             <td>{elem.title}</td>
             <td>{elem.description}</td>
-            <td><p>hello</p><p>enj</p><p>wdn</p></td>
+            <td>
+              <div>
+              <Link  to={"/recept/" + elem._id}>
+                SHOW RECEPTS
+              </Link>
+              </div>
+              <div>
+              <Link  to={"/recept/" + elem._id}>
+                EDITS
+              </Link>
+
+              </div>
+              <div>
+              <Link  to={"/recept/" + elem._id}>
+                DELETE
+              </Link>
+              </div>
+            </td>
           </tr>
+        
     
         </tbody>
+                   
       </table>
     </div>
            

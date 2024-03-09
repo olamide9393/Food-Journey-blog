@@ -42,12 +42,30 @@ const BlogList = () => {
           </tr>
         </thead>
         <tbody>
-        <tr>
+      
+       <tr>
             <td>{elem.title}</td>
             <td>{elem.description}</td>
-            <td><p>hello</p><p>enj</p><p>wsn</p></td>
+            <td>
+            <div>
+              <Link  to={"/blog/" + elem._id}>
+                SHOW BLOGS
+              </Link>
+              </div>
+              <div>
+              <Link  to={"/blog/" + elem._id}>
+                EDITS
+              </Link>
+
+              </div>
+              <div>
+              <Link  to={"/blog/" + elem._id}>
+                DELETE
+              </Link>
+              </div>
+            </td>
           </tr>
-    
+          
         </tbody>
       </table>
     </div>

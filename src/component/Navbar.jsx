@@ -212,7 +212,7 @@ const Navbar = () => {
               </>
             )}
 
-            <nav className="navbar navbar-expand-sm navbar-dark">
+            {/* <nav className="navbar navbar-expand-sm navbar-dark">
               <form
                 style={{
                   marginLeft: "100px",
@@ -230,7 +230,7 @@ const Navbar = () => {
                   Search
                 </button>
               </form>
-            </nav>
+            </nav> */}
           </ul>
         </div>
       </nav>

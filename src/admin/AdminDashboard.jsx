@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     </li>
     <li className="nav-item" style={{ marginRight: '300px' }}>
       {/* <a className="nav-link" href="#">BLOG</a> */}
-      <Link className=" nav-link btn btn-success"to={"/admin/recept"}>BLOG</Link>
+      <Link className=" nav-link btn btn-success"to={"/admin/blog"}>BLOG</Link>
 
     </li>
     <li className="nav-item" style={{ marginRight: '300px' }}>
