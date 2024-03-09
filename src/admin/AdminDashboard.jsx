@@ -27,25 +27,7 @@ const AdminDashboard = () => {
     </li>
   </ul>
   <br /><br /><br />
-  {/* <div>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>TITLE</th>
-            <th>DESCRIPTION</th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-    
-        </tbody>
-      </table>
-    </div> */}
+
      </div>
      
     </div>
