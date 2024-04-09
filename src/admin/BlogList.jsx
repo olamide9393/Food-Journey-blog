@@ -61,7 +61,7 @@ const BlogList = () => {
               </div>
               <br />
               <div>
-              <Link  to={"/blog/" + elem._id} className="btn btn-success btn-block mb-4">
+              <Link  to={"/blog/" + elem._id} className="btn btn-danger btn-block mb-4">
                 DELETE
               </Link>
               </div>
