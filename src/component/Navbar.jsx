@@ -174,7 +174,7 @@ const Navbar = () => {
                       fontSize: "20px",
                     }}
                     className="nav-link"
-                    to="/register"
+                    to="/admin"
                   >
                     ADMIN DASHBOARD
                   </Link>
