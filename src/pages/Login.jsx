@@ -26,7 +26,7 @@ const Login = () => {
       const response = await axiosInstance.post("auth/login", Data, {
         headers: { "Content-type": "application/json" },
       });
-      console.log(response);
+      console.log(response, 'hi');
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data || null));
       }

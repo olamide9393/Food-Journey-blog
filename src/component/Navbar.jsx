@@ -42,8 +42,9 @@ const Navbar = () => {
           "Content-Type": "application/json",
         },
       });
+      // console.log(response);
       setData(response.data);
-      // console.log(response.data,"test");
+      // console.log(response,"test");
     } catch (error) {
       console.log(error);
       // Handle the error appropriately for your application
@@ -164,6 +165,20 @@ const Navbar = () => {
             {isLoggedIn ? (
               // Display "Logout" if the user is logged in
               <>
+                  <li className="nav-item">
+                  <Link
+                    style={{
+                      color: "black",
+                      marginLeft: "120px",
+                      marginTop: "10px",
+                      fontSize: "20px",
+                    }}
+                    className="nav-link"
+                    to="/register"
+                  >
+                    ADMIN DASHBOARD
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <button
                     className="nav-link btn btn-success"
